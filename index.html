@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stone Paper Scissors - Hand Gesture Game</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<video id="cam" playsinline muted></video>
+<canvas id="skel"></canvas>
+
+<main class="ui">
+  <h1>Stone Paper Scissors</h1>
+  <p id="live">Your hand: waiting for camera</p>
+
+  <div id="arena">
+    <div class="side"><span id="you" class="pick">❔</span><small>You</small></div>
+    <div id="big">Ready?</div>
+    <div class="side"><span id="cpu" class="pick">❔</span><small>Computer</small></div>
+  </div>
+
+  <div class="score">
+    <span>You <b id="sYou">0</b></span>
+    <span>Draw <b id="sDraw">0</b></span>
+    <span>Computer <b id="sCpu">0</b></span>
+  </div>
+
+  <button id="play">Start camera and play</button>
+
+  <div id="manual" hidden>
+    <small>No camera? Pick manually:</small>
+    <div>
+      <button data-g="stone">✊ Stone</button>
+      <button data-g="paper">✋ Paper</button>
+      <button data-g="scissors">✌️ Scissors</button>
+    </div>
+  </div>
+  <small class="hint">Show a fist for Stone, an open hand for Paper, and two fingers for Scissors when the countdown ends.</small>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.3.1675466862/camera_utils.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>
